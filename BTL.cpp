@@ -15,21 +15,22 @@ struct Node {
     Node* next;
 };
 class Library{
+	Node *head;
 	Node* createNode(Sach s);
-	void themSach(Node*& head, Sach s);
+	void themSach(Sach s);
 	void inDinhDangSach(Sach s);
-	void hienThiDanhSach(Node* head);
-	Node* timKiemTheoMa(Node* head, string ma);
-	void suaThongTinSach(Node* head);
-	void muonSach(Node* head);
-	void traSach(Node* head);
-	void locTheoTheLoai(Node* head);
-	void sapXepTheoTen(Node* head);
-	void docFile(Node*& head, string filename);
-	void ghiFile(Node* head, string filename);
-	void giaiPhongBoNho(Node*& head);
+	void hienThiDanhSach();
+	Node* timKiemTheoMa( string ma);
+	void suaThongTinSach();
+	void muonSach();
+	void traSach();
+	void locTheoTheLoai();
+	void sapXepTheoTen();
+	void docFile(string filename);
+	void ghiFile(string filename);
+	void giaiPhongBoNho();
 };
-void Library::locTheoTheLoai(Node *head){
+void Library::locTheoTheLoai(){
 	cin.ignore();
 	string TheLoai;
 	cout<<"nhap the loai sach"<<endl;
