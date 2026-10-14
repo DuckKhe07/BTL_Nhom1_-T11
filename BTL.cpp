@@ -30,6 +30,21 @@ class Library{
 	void ghiFile(string filename);
 	void giaiPhongBoNho();
 };
+void Library::sapXepTheoTen() {
+    for (Node* i = head; i != nullptr && i->next != nullptr; i = i->next) {
+        Node* minNode = i;
+        for (Node* j = i->next; j != nullptr; j = j->next) {
+            if (j->data.tenSach < minNode->data.tenSach) {
+                minNode = j;
+            }
+        }
+        if (minNode != i) {
+            swap(i->data, minNode->data);
+        }
+    }
+    cout << "[+] Da sap xep danh sach theo ten (A-Z)!\n";
+}
+
 void Library::locTheoTheLoai(){
 	cin.ignore();
 	string TheLoai;
