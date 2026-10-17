@@ -20,17 +20,17 @@ class Library{
 	    Node* createNode(Sach s);
 	    void init();
 	    void themSach(Node*& head, Sach s);
-	void inDinhDangSach(Sach s);
-	void hienThiDanhSach();
-	Node* timKiemTheoMa(string ma);
-	void suaThongTinSach();
-	void muonSach();
-	void traSach();
-	void locTheoTheLoai();
-	void sapXepTheoTen();
-	void docFile(Node*& head, string filename);
-	void ghiFile(string filename);
-	void giaiPhongBoNho(Node*& head);
+	    void inDinhDangSach(Sach s);
+	    void hienThiDanhSach();
+	    Node* timKiemTheoMa(string ma);
+	    void suaThongTinSach();
+	    void muonSach();
+	    void traSach();
+	    void locTheoTheLoai();
+	    void sapXepTheoTen();
+	    void docFile(Node*& head, string filename);
+	    void ghiFile(string filename);
+	    void giaiPhongBoNho(Node*& head);
 };
 //Hàm khởi tạo
 void Library::init(){
@@ -138,7 +138,7 @@ void Library::muonSach() {
     Node* p = timKiemTheoMa(ma);
  
     if (p == NULL) {
-        cout << "Khong tim thay sach!" << endl;
+        cout << "[!] Khong tim thay sach!" << endl;
     } else if (p->data.soLuongTon == 0) {
         cout << "Sach da het, khong the muon!" << endl;
     } else {
@@ -155,7 +155,7 @@ void Library::traSach() {
     Node* p = timKiemTheoMa(ma);
  
     if (p == NULL) {
-        cout << "Khong tim thay sach!" << endl;
+        cout << "[!] Khong tim thay sach!" << endl;
     } else if (p->data.soLuongMuon == 0) {
         cout << "Khong co ai dang muon sach nay!" << endl;
     } else {
@@ -233,7 +233,7 @@ void Library::docFile(Node*& head, string filename){
 void Library::ghiFile(string filename){
 	ofstream file(filename);
     if (!file.is_open()) {
-        cout << "Khong the tao/mo file de ghi!\n";
+        cout << "[!] Khong the tao/mo file de ghi!\n";
         return;
     }
     
@@ -257,7 +257,7 @@ void Library::giaiPhongBoNho(Node*& head){
 }
 int main(){
 	Library L;
-    string filename = "Ms001.txt";
+    string filename = "ThuVienSachCuaNhom1.txt";
     L.init();
     int choise;
 
@@ -273,7 +273,7 @@ int main(){
         cout << "5. Tra sach\n";
         cout << "6. Loc sach theo the loai\n";
         cout << "7. Sap xep sach theo ten (A-Z)\n";
-        cout << "8. Luu danh sach vao File .txt\n";
+        cout << "8. Luu danh sach vao File ThuVienSachCuaNhom1.txt\n";
         cout << "0. Thoat chuong trinh\n";
         cout << "-----------------------------------------------------------\n";
         cout << "Nhap lua chon cua ban: ";
